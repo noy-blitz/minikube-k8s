@@ -1,0 +1,30 @@
+# rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ServiceAccount
+metadata:
+  name: service-a-serviceaccount
+  namespace: myapp
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: myapp
+  name: service-a-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "pods/log", "services", "nodes", "leases"]
+  verbs: ["get", "list", "watch", "create", "update", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: service-a-rolebinding
+  namespace: myapp
+subjects:
+- kind: ServiceAccount
+  name: service-a-sa
+  namespace: myapp
+roleRef:
+  kind: Role
+  name: service-a-role
+  apiGroup: rbac.authorization.k8s.io

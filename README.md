@@ -31,6 +31,7 @@ This repository contains the necessary configurations and application code for s
 Accessing the Services: Make sure to update the host in the Ingress configuration to your domain or use Minikube’s IP with the appropriate paths:
 
 Service-A: http://<minikube-ip>/service-a
+
 Service-B: http://<minikube-ip>/service-b
 
 

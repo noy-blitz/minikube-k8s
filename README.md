@@ -41,8 +41,8 @@ Service-A: http://<minikube-ip>/service-a
 
 Service-B: http://<minikube-ip>/service-b
 
-Liveness Probe: Checks /health every 15 seconds to ensure Service-B is running correctly. If this fails, Kubernetes will restart the container.
+Liveness Probe: Checks /health every 15 seconds to ensure the Service is running correctly. If this fails, Kubernetes will restart the container.
 
-Readiness Probe: Checks /ready every 10 seconds to ensure Service-B is ready to start serving traffic.
+Readiness Probe: Checks /ready every 10 seconds to ensure the Service is ready to start serving traffic.
 
 

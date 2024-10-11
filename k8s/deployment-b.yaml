@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-b
+  name: service-B
   namespace: myapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-b
+      app: service-B
   template:
     metadata:
       labels:
-        app: service-b
+        app: service-B
     spec:
       containers:
-      - name: hello-microsoft
-        image: service-b:latest
+      - name: service-B
+        image: service-B:latest
         args:
           - "-text=Hello Microsoft!"
         livenessProbe:
           httpGet:
-            path: /healthz
+            path: /health
             port: 8080
           initialDelaySeconds: 30
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /readyz
+            path: /ready
             port: 8080
           initialDelaySeconds: 30
           periodSeconds: 10

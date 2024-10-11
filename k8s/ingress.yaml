@@ -8,17 +8,17 @@ spec:
   - host: 192.168.49.2
     http:
       paths:
-      - path: /service-a
+      - path: /service-A
         pathType: Prefix
         backend:
           service:
-            name: service-a
+            name: service-A
             port:
               number: 80
-      - path: /service-b
+      - path: /service-B
         pathType: Prefix
         backend:
           service:
-            name: service-b
+            name: service-B
             port:
               number: 80

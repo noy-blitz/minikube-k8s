@@ -6,14 +6,14 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: service-a
+      app: service-A
   policyTypes:
   - Egress
   egress:
   - to:
     - podSelector:
         matchLabels:
-          app: service-b
+          app: service-B
     ports:
     - protocol: TCP
       port: 80

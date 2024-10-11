@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-b
+  name: service-B
   namespace: myapp
 spec:
   type: ClusterIP
   selector:
-    app: service-b
+    app: service-B
   ports:
   - protocol: TCP
     port: 80
